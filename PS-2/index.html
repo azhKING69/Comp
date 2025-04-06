@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Rotating Folder Animation</title>
+  <style>
+    body {
+      background: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+      font-family: sans-serif;
+    }
+    .folder-container {
+      position: relative;
+      width: 200px;
+      height: 140px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .folder-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 140px;
+      background: #f57c00;
+      border-radius: 8px 8px 5px 5px;
+      z-index: 1;
+    }
+    .folder-front {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 140px;
+      background: #f9a825;
+      border-radius: 8px 8px 5px 5px;
+      background-size: cover;
+      background-position: center;
+      z-index: 3;
+      transform-origin: bottom center;
+      transition: transform 0.7s ease;
+    }
+    .files {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .file {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 140px;
+      border: 1px solid black;
+      background: #fff;
+      border-radius: 8px 8px 5px 5px;
+      transform-origin: bottom center;
+      transition: transform 0.7s ease;
+    }
+    .folder-container:hover .folder-front {
+      transform: rotateX(-60deg);
+    }
+    .folder-container:hover .file:nth-child(1) {
+      transform: rotateX(-25deg);
+    }
+    .folder-container:hover .file:nth-child(2) {
+      transform: rotateX(-40deg);
+    }
+    .folder-container:hover .file:nth-child(3) {
+      transform: rotateX(-50deg);
+    }
+    .folder-label {
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="folder-container">
+    <div class="folder-back"></div>
+    <div class="files">
+      <div class="file"></div>
+      <div class="file"></div>
+      <div class="file"></div>
+    </div>
+    <div class="folder-front" style="background-image: url('/logo.jpg');"></div>
+  </div>
+  <div class="folder-label">ANHAD' 25</div>
+</body>
+</html>
