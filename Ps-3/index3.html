@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Device Dimension Loop Animation</title>
+  <style>
+    /* Container centered with Flexbox */
+    .container {
+      width: 500px;
+      height: 500px;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Device style with blue rounded border and animation */
+    .device {
+      border: 3px solid blue;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: deviceAnim 6s infinite;
+    }
+    
+    /* Image fills the device element */
+    .device img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Keyframes for changing dimensions from mobile to computer to laptop */
+    @keyframes deviceAnim {
+      0% {
+        width: 80px;
+        height: 150px;
+      }
+      33% {
+        width: 150px;
+        height: 120px;
+      }
+      66% {
+        width: 200px;
+        height: 150px;
+      }
+      100% {
+        width: 80px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="device">
+      <!-- Replace with your image -->
+      <img src="/logo.jpg" alt="Device">
+    </div>
+  </div>
+</body>
+</html>
